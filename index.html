@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App | Vanilla JS</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-content">
+        <header>
+          <i class="fa-solid fa-location-dot fa-lg"></i>
+          <input type="text" name="place" placeholder="Enter city name" />
+          <i class="fa-solid fa-magnifying-glass search fa-lg"></i>
+        </header>
+        <img src="/images/rain.png" alt="rain" class="rain-img" />
+        <h3 class="temp">1 <span>&deg;</span>C</h3>
+        <p class="weather-stat">Snow</p>
+        <div class="additional-info">
+          <div class="additional-info-item">
+            <i class="fa-solid fa-water fa-lg"></i>
+            <div>
+              <h5>99%</h5>
+              <p>Humidity</p>
+            </div>
+          </div>
+          <div class="additional-info-item">
+            <i class="fa-solid fa-wind fa-lg"></i>
+            <div>
+              <h5>4 km/h</h5>
+              <p>Wind Speed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

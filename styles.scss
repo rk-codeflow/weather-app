@@ -1,0 +1,69 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #26A3B9;
+  font-family: 'Agdasima', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .weather-content {
+    background-color: white;
+    padding: 0.875rem;
+    border-radius: 14px;
+    width: 400px;
+
+    img {
+      width: 150px;
+      margin: 0 auto;
+      display: flex;
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+
+    .temp,
+    .weather-stat {
+      text-align: center;
+    }
+
+    .additional-info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 70px;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+      }
+    }
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: .875rem;
+
+    input {
+      outline: none;
+      border: none;
+      text-transform: uppercase;
+      font-family: 'Agdasima', sans-serif;
+      letter-spacing: 2.5px;
+    }
+    .search {
+      margin-left: auto;
+      cursor: pointer;
+    }
+  }
+}
