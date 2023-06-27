@@ -5,7 +5,7 @@ const weather = document.querySelector(".weather");
 const humidity = document.querySelector(".humidity");
 const wind = document.querySelector(".wind");
 const weatherDivContent = document.querySelector(".weather-content-details");
-const image = document.querySelector(".weather-content-details img");
+const weatherImage = document.querySelector(".weather-content-details img");
 
 const APIkey = "e7601e12ef4ac998941160bff40570d1";
 let city = "";
@@ -15,7 +15,6 @@ let url =
 searchButton.addEventListener("click", () => {
   city = input.value;
   const updatedUrl = url.replace("{city}", city).replace("{APIkey}", APIkey);
-  console.log(city);
   fetch(updatedUrl)
     .then((res) => res.json())
     .then((data) => {
@@ -27,6 +26,29 @@ searchButton.addEventListener("click", () => {
       humidity.innerHTML = `${data.main.humidity} %`;
       wind.innerHTML = `${data.wind.speed} <span>Km/h</span>`;
       weatherDivContent.style.display = "block";
+
+      // updating image based on weather condition
+      const weatherStatus = data.weather[0].main.toLowerCase();
+      console.log(weatherStatus);
+      switch (weatherStatus) {
+        case "clear":
+          weatherImage.src = "/images/clear.png";
+          break;
+        case "clouds":
+          weatherImage.src = "/images/cloud.png";
+          break;
+        case "mist":
+          weatherImage.src = "/images/mist.png";
+          break;
+        case "rain":
+          weatherImage.src = "/images/rain.png";
+          break;
+        case "snow":
+          weatherImage.src = "/images/snow.png";
+          break;
+        default:
+          weatherImage.src = "/images/clear.png";
+      }
     })
     .catch((err) => console.log(err));
 });
