@@ -4,6 +4,8 @@ const temp = document.querySelector(".temp");
 const weather = document.querySelector(".weather");
 const humidity = document.querySelector(".humidity");
 const wind = document.querySelector(".wind");
+const weatherDivContent = document.querySelector(".weather-content-details");
+const image = document.querySelector(".weather-content-details img");
 
 const APIkey = "e7601e12ef4ac998941160bff40570d1";
 let city = "";
@@ -12,9 +14,9 @@ let url =
 
 searchButton.addEventListener("click", () => {
   city = input.value;
-  url = url.replace("{city}", city).replace("{APIkey}", APIkey);
+  const updatedUrl = url.replace("{city}", city).replace("{APIkey}", APIkey);
   console.log(city);
-  fetch(url)
+  fetch(updatedUrl)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -24,6 +26,7 @@ searchButton.addEventListener("click", () => {
       weather.innerHTML = data.weather[0].main;
       humidity.innerHTML = `${data.main.humidity} %`;
       wind.innerHTML = `${data.wind.speed} <span>Km/h</span>`;
+      weatherDivContent.style.display = "block";
     })
     .catch((err) => console.log(err));
 });

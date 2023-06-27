@@ -34,6 +34,7 @@ body {
         text-transform: uppercase;
         font-family: "Agdasima", sans-serif;
         letter-spacing: 2.5px;
+        width: 100%;
         &:focus {
           border-bottom: 2px solid #26a3b9;
           width: 100%;
@@ -46,6 +47,8 @@ body {
     }
 
     &-details {
+      display: none;
+
       img {
         width: 150px;
         margin: 0 auto;

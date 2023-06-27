@@ -34,6 +34,7 @@ body {
   text-transform: uppercase;
   font-family: "Agdasima", sans-serif;
   letter-spacing: 2.5px;
+  width: 100%;
 }
 .container .weather-content header input:focus {
   border-bottom: 2px solid #26a3b9;
@@ -42,6 +43,9 @@ body {
 .container .weather-content header .search {
   margin-left: auto;
   cursor: pointer;
+}
+.container .weather-content-details {
+  display: none;
 }
 .container .weather-content-details img {
   width: 150px;
