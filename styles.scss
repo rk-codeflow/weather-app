@@ -7,8 +7,8 @@
 }
 
 body {
-  background-color: #26A3B9;
-  font-family: 'Agdasima', sans-serif;
+  background-color: #26a3b9;
+  font-family: "Agdasima", sans-serif;
 }
 
 .container {
@@ -23,47 +23,70 @@ body {
     border-radius: 14px;
     width: 400px;
 
-    img {
-      width: 150px;
-      margin: 0 auto;
+    header {
       display: flex;
-      margin-top: 20px;
-      margin-bottom: 50px;
-    }
+      align-items: center;
+      gap: 0.875rem;
 
-    .temp,
-    .weather-stat {
-      text-align: center;
-    }
-
-    .additional-info {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 70px;
-
-      &-item {
-        display: flex;
-        align-items: center;
-        gap: 0.85rem;
+      input {
+        outline: none;
+        border: none;
+        text-transform: uppercase;
+        font-family: "Agdasima", sans-serif;
+        letter-spacing: 2.5px;
+      }
+      .search {
+        margin-left: auto;
+        cursor: pointer;
       }
     }
-  }
 
-  header {
-    display: flex;
-    align-items: center;
-    gap: .875rem;
+    &-details {
+      img {
+        width: 150px;
+        margin: 0 auto;
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 50px;
+      }
 
-    input {
-      outline: none;
-      border: none;
-      text-transform: uppercase;
-      font-family: 'Agdasima', sans-serif;
-      letter-spacing: 2.5px;
-    }
-    .search {
-      margin-left: auto;
-      cursor: pointer;
+      .temp {
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+
+      .weather-stat {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .additional-info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 70px;
+
+        &-item {
+          display: flex;
+          align-items: center;
+          gap: 0.85rem;
+
+          h5 {
+            font-size: 1.15rem;
+            font-weight: 400;
+          }
+
+          p {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+          }
+        }
+      }
     }
   }
 }

@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #26A3B9;
+  background-color: #26a3b9;
   font-family: "Agdasima", sans-serif;
 }
 
@@ -23,40 +23,57 @@ body {
   border-radius: 14px;
   width: 400px;
 }
-.container .weather-content img {
-  width: 150px;
-  margin: 0 auto;
-  display: flex;
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
-.container .weather-content .temp,
-.container .weather-content .weather-stat {
-  text-align: center;
-}
-.container .weather-content .additional-info {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 70px;
-}
-.container .weather-content .additional-info-item {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
-.container header {
+.container .weather-content header {
   display: flex;
   align-items: center;
   gap: 0.875rem;
 }
-.container header input {
+.container .weather-content header input {
   outline: none;
   border: none;
   text-transform: uppercase;
   font-family: "Agdasima", sans-serif;
   letter-spacing: 2.5px;
 }
-.container header .search {
+.container .weather-content header .search {
   margin-left: auto;
   cursor: pointer;
+}
+.container .weather-content-details img {
+  width: 150px;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.container .weather-content-details .temp {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.container .weather-content-details .weather-stat {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.container .weather-content-details .text-center {
+  text-align: center;
+}
+.container .weather-content-details .additional-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+.container .weather-content-details .additional-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.container .weather-content-details .additional-info-item h5 {
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+.container .weather-content-details .additional-info-item p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 2px;
 }/*# sourceMappingURL=styles.css.map */
