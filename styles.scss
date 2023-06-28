@@ -11,6 +11,26 @@ body {
   font-family: "Agdasima", sans-serif;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.city-not-found {
+  display: none;
+  img {
+    max-width: 200px;
+    display: flex;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -67,10 +87,6 @@ body {
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: capitalize;
-      }
-
-      .text-center {
-        text-align: center;
       }
 
       .additional-info {

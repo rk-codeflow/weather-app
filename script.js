@@ -6,6 +6,7 @@ const humidity = document.querySelector(".humidity");
 const wind = document.querySelector(".wind");
 const weatherDivContent = document.querySelector(".weather-content-details");
 const weatherImage = document.querySelector(".weather-content-details img");
+const noCity = document.querySelector(".city-not-found");
 
 const APIkey = "e7601e12ef4ac998941160bff40570d1";
 let city = "";
@@ -16,7 +17,15 @@ searchButton.addEventListener("click", () => {
   city = input.value;
   const updatedUrl = url.replace("{city}", city).replace("{APIkey}", APIkey);
   fetch(updatedUrl)
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) {
+        noCity.style.display = "block";
+        weatherDivContent.style.display = "none";
+      } else {
+        noCity.style.display = "none";
+        return res.json();
+      }
+    })
     .then((data) => {
       console.log(data);
       temp.innerHTML = `${Math.floor(
@@ -28,27 +37,28 @@ searchButton.addEventListener("click", () => {
       weatherDivContent.style.display = "block";
 
       // updating image based on weather condition
-      const weatherStatus = data.weather[0].main.toLowerCase();
+      const weatherStatus = data.weather[0].main;
       console.log(weatherStatus);
       switch (weatherStatus) {
-        case "clear":
+        case "Clear":
           weatherImage.src = "/images/clear.png";
           break;
-        case "clouds":
+        case "Clouds":
           weatherImage.src = "/images/cloud.png";
           break;
-        case "mist":
+        case "Mist":
           weatherImage.src = "/images/mist.png";
           break;
-        case "rain":
+        case "Rain":
           weatherImage.src = "/images/rain.png";
           break;
-        case "snow":
+        case "Snow":
           weatherImage.src = "/images/snow.png";
           break;
         default:
           weatherImage.src = "/images/clear.png";
       }
     })
+
     .catch((err) => console.log(err));
 });
