@@ -50,6 +50,7 @@ function getWeatherDetails() {
           weatherImage.src = "/images/mist.png";
           break;
         case "Rain":
+        case "Thunderstorm":
           weatherImage.src = "/images/rain.png";
           break;
         case "Snow":
