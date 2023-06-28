@@ -13,7 +13,7 @@ let city = "";
 let url =
   "https://api.openweathermap.org/data/2.5/weather?q={city}&appid={APIkey}";
 
-searchButton.addEventListener("click", () => {
+function getWeatherDetails() {
   city = input.value;
   const updatedUrl = url.replace("{city}", city).replace("{APIkey}", APIkey);
   fetch(updatedUrl)
@@ -59,6 +59,15 @@ searchButton.addEventListener("click", () => {
           weatherImage.src = "/images/clear.png";
       }
     })
-
     .catch((err) => console.log(err));
+}
+
+input.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    getWeatherDetails();
+  }
+});
+
+searchButton.addEventListener("click", () => {
+  getWeatherDetails();
 });
