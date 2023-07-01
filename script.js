@@ -56,6 +56,9 @@ function getWeatherDetails() {
         case "Snow":
           weatherImage.src = "/images/snow.png";
           break;
+        case "Fog":
+          weatherImage.src = "/images/fog.png";
+          break;
         default:
           weatherImage.src = "/images/clear.png";
       }
